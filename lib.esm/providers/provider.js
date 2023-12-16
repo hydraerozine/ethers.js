@@ -1083,7 +1083,7 @@ export class TransactionResponse {
             }
             const txListener = async (receipt) => {
                 // Done; return it!
-                if ((await receipt.confirmations()) >= confirms) {
+                if (receipt.confirmations >= confirms) {
                     cancel();
                     try {
                         resolve(checkReceipt(receipt));
